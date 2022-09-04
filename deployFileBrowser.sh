@@ -7,7 +7,7 @@ dockerUser=$1;
 apt install docker-compose -y;
 #Deploying docker compose
 echo "Deploying File Browser...">>deployFileBrowser.log;
-docker-compose down
+DOCKER_USER=$dockerUser docker-compose down
 DOCKER_USER=$dockerUser docker-compose up -d
 echo "File Browser deployment successfull...">>deployFileBrowser.log;
 exit 0
