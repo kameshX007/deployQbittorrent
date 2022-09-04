@@ -1,16 +1,15 @@
 version: "2.1"
 services:
-  filebrowser:
-    image: filebrowser/filebrowser
-    container_name: filebrowser
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
     environment:
       - PUID=1001
       - PGID=1001
       - TZ=Asia/Kolkata
+      - WEBUI_PORT=8080
     volumes:
-      - /home/${DOCKER_USER}/docker/filebrowser/config:/config
-      - /home/${DOCKER_USER}:/srv
-      
+      - /home/${DOCKER_USER}/qbittorrentDownloads:/downloads
     ports:
-      - 49154:80
+      - 8080:8080
     restart: unless-stopped
