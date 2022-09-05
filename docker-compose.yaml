@@ -9,7 +9,7 @@ services:
       - TZ=Asia/Kolkata
       - WEBUI_PORT=8080
     volumes:
-      - /home/${DOCKER_USER}/qbittorrentDownloads:/downloads
+      - /home/${DOCKER_USER}/downloads:/downloads
     ports:
       - 8080:8080
     restart: unless-stopped
