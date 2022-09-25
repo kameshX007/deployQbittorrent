@@ -10,6 +10,11 @@ services:
       - WEBUI_PORT=8080
     volumes:
       - /home/${DOCKER_USER}/downloads:/downloads
+      - /home/${DOCKER_USER}/qbittorrent/config:/config
     ports:
       - 8080:8080
     restart: unless-stopped
+networks:
+  default:
+    name: tunnel
+    external: true
